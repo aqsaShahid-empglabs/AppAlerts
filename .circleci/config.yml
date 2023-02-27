@@ -19,14 +19,14 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "presentation/build.gradle" }}
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "SnackBars/build.gradle" }}
       - run:
           name: Run Presentation Module Unit Tests
           command: ./gradlew :SnackBars:testDebugUnitTest
       - store_artifacts:
-          path: presentation/build/reports
+          path: SnackBars/build/reports
       - store_test_results:
-          path: presentation/build/test-results
+          path: SnackBars/build/test-results
       - run:
           name: Run Domain Module Unit Tests
           command: ./gradlew :SnackBars:test
@@ -45,4 +45,4 @@ jobs:
           name: Run Lint Test
           command: ./gradlew lint
       - store_artifacts:
-          path: presentation/build/reports
+          path: SnackBars/build/reports
