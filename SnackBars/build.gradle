@@ -47,7 +47,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.snackbars'
                 artifactId = 'snackbars'
-                version = '1.0'
+                version = '1.0.1'
                 artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
             }
         }
