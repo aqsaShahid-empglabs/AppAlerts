@@ -46,7 +46,6 @@ jobs:
           command: ./gradlew lint
       - run:
           name: Deploy to JitPack plaes
-          command: |
-          curl -X POST -H "Authorization: token jp_8djsq5v2shrm9q25b8e9djm41d" https://jitpack.io/api/builds/com.snackbars/snackbars/0.1.0-SNAPSHOT
+          command:| curl -X POST -H "Authorization: token jp_8djsq5v2shrm9q25b8e9djm41d" https://jitpack.io/api/builds/com.snackbars/snackbars/0.1.0-SNAPSHOT
       - store_artifacts:
           path: SnackBars/build/reports
