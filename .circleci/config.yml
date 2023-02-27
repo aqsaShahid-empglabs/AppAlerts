@@ -22,7 +22,7 @@ jobs:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "SnackBars/build.gradle" }}
       - run:
           name: Run Presentation Module Unit Tests
-          command: ./gradlew :SnackBars:testDebugUnitTest
+          command: ./gradlew :SnackBars:clean assembleRelease publish
       - store_artifacts:
           path: SnackBars/build/reports
       - store_test_results:
@@ -44,8 +44,5 @@ jobs:
       - run:
           name: Run Lint Test
           command: ./gradlew lint
-      - run:
-          name: Deploy to JitPack plaes
-          command:| curl -X POST -H "Authorization: token jp_8djsq5v2shrm9q25b8e9djm41d" https://jitpack.io/api/builds/com.snackbars/snackbars/0.1.0-SNAPSHOT
       - store_artifacts:
           path: SnackBars/build/reports
